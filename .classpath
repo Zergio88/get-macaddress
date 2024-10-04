@@ -6,7 +6,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Serg10/Downloads/librerias-QR/core-3.4.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Serg10/Downloads/librerias-QR/javase-3.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administración/Desktop/librerias-QR/core-3.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administración/Desktop/librerias-QR/javase-3.4.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

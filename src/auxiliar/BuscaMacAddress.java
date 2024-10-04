@@ -1,4 +1,4 @@
-package principal;
+package auxiliar;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -25,7 +25,7 @@ public class BuscaMacAddress {
 	            String linea;
 	            Boolean esAdaptadorWifi=false;
 	            
-	         // Patrón regex para encontrar la MAC Address
+	         // Patrï¿½n regex para encontrar la MAC Address
 	            Pattern macPattern = Pattern.compile("([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})");
 	            
 	            while ((linea = reader.readLine()) != null) {

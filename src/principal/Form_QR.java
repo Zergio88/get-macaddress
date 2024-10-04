@@ -6,6 +6,8 @@ import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 
+import auxiliar.BuscaMacAddress;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -21,15 +23,16 @@ public class Form_QR extends JFrame {
     private JLabel qrLabel;
 
     public Form_QR() {
-        setTitle("Generador de Código QR");
+        setTitle("Generador de Cï¿½digo QR");
         setSize(450, 350);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
 
         textField = new JTextField(20);
         // la primera vez cargar la caja de texto con la mac-address
+        textField.setText(BuscaMacAddress.getMacAddress());
         
-        generateButton = new JButton("Generar Código QR");
+        generateButton = new JButton("Generar Cï¿½digo QR");
         qrLabel = new JLabel();
         generateButton.addActionListener(new ActionListener() {
             @Override
@@ -51,10 +54,10 @@ public class Form_QR extends JFrame {
             File qrFile = new File("QRCode.png");
             MatrixToImageWriter.writeToPath(bitMatrix, "PNG", qrFile.toPath());
             qrLabel.setIcon(new ImageIcon(ImageIO.read(qrFile)));
-            JOptionPane.showMessageDialog(this, "Código QR generado como QRCode.png");
+            JOptionPane.showMessageDialog(this, "Cï¿½digo QR generado como QRCode.png");
         } catch (WriterException | IOException e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Error generando el código QR: " + e.getMessage());
+            JOptionPane.showMessageDialog(this, "Error generando el cï¿½digo QR: " + e.getMessage());
         }
     }
 

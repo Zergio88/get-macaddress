@@ -1,6 +1,10 @@
 package principal;
 
+
 import javax.swing.*;
+
+import auxiliar.BuscaMacAddress;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,13 +47,14 @@ public class Formulario extends JFrame {
         gbc.gridx = 1;
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.WEST; // Alinear a la izquierda
+        campo2.setText(BuscaMacAddress.getMacAddress());
         panel.add(campo2, gbc);
 
         // Crear el boton
         JButton boton = new JButton("Enviar");
         gbc.gridx = 0;
         gbc.gridy = 2;
-        gbc.gridwidth = 2; // El boton ocupara¡ dos columnas
+        gbc.gridwidth = 2; // El boton ocuparaï¿½ dos columnas
         gbc.anchor = GridBagConstraints.CENTER; // Centrar el boton
         panel.add(boton, gbc);
 
@@ -66,7 +71,7 @@ public class Formulario extends JFrame {
             }
         });
 
-        // Añadir el panel a la ventana
+        // Aï¿½adir el panel a la ventana
         add(panel);
 
         // Hacer la ventana visible
