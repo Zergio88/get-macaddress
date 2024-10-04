@@ -5,9 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Form extends JFrame {
+public class Formulario extends JFrame {
 
-    public Form() {
+    public Formulario() {
         // Configurar la ventana principal
         setTitle("Get MAC Address");
         setSize(300, 150);
@@ -45,15 +45,15 @@ public class Form extends JFrame {
         gbc.anchor = GridBagConstraints.WEST; // Alinear a la izquierda
         panel.add(campo2, gbc);
 
-        // Crear el botón
+        // Crear el boton
         JButton boton = new JButton("Enviar");
         gbc.gridx = 0;
         gbc.gridy = 2;
-        gbc.gridwidth = 2; // El botón ocupará dos columnas
-        gbc.anchor = GridBagConstraints.CENTER; // Centrar el botón
+        gbc.gridwidth = 2; // El boton ocupara� dos columnas
+        gbc.anchor = GridBagConstraints.CENTER; // Centrar el boton
         panel.add(boton, gbc);
 
-        // Acción al hacer clic en el botón
+        // Accion al hacer clic en el boton
         boton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -66,7 +66,7 @@ public class Form extends JFrame {
             }
         });
 
-        // Añadir el panel a la ventana
+        // A�adir el panel a la ventana
         add(panel);
 
         // Hacer la ventana visible
@@ -74,11 +74,11 @@ public class Form extends JFrame {
     }
 
     public static void main(String[] args) {
-        // Ejecutar la aplicación en el hilo de la interfaz gráfica
+        // Ejecutar la aplicacionn en el hilo de la interfaz grafica
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Form();
+                new Formulario();
             }
         });
     }
