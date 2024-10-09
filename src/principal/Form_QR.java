@@ -54,7 +54,6 @@ public class Form_QR extends JFrame {
             File qrFile = new File("QRCode.png");
             MatrixToImageWriter.writeToPath(bitMatrix, "PNG", qrFile.toPath());
             qrLabel.setIcon(new ImageIcon(ImageIO.read(qrFile)));
-            JOptionPane.showMessageDialog(this, "C�digo QR generado como QRCode.png");
         } catch (WriterException | IOException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Error generando el c�digo QR: " + e.getMessage());
