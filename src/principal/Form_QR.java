@@ -23,7 +23,7 @@ public class Form_QR extends JFrame {
     private JLabel qrLabel;
 
     public Form_QR() {
-        setTitle("Generador de C�digo QR");
+        setTitle("Generador de Codigo QR");
         setSize(450, 350);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
@@ -32,7 +32,7 @@ public class Form_QR extends JFrame {
         // la primera vez cargar la caja de texto con la mac-address
         textField.setText(BuscaMacAddress.getMacAddress());
         
-        generateButton = new JButton("Generar C�digo QR");
+        generateButton = new JButton("Generar Codigo QR");
         qrLabel = new JLabel();
         generateButton.addActionListener(new ActionListener() {
             @Override
@@ -56,7 +56,7 @@ public class Form_QR extends JFrame {
             qrLabel.setIcon(new ImageIcon(ImageIO.read(qrFile)));
         } catch (WriterException | IOException e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Error generando el c�digo QR: " + e.getMessage());
+            JOptionPane.showMessageDialog(this, "Error generando el codigo QR: " + e.getMessage());
         }
     }
 
