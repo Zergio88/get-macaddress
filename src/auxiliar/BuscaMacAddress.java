@@ -17,7 +17,7 @@ public class BuscaMacAddress {
 	        try {
 	            // Crear el proceso
 	            ProcessBuilder builder = new ProcessBuilder(comando);
-	            builder.redirectErrorStream(true); // Combinar salida de error y salida est�ndar
+	            builder.redirectErrorStream(true); // Combinar salida de error y salida estandar
 	            Process proceso = builder.start();
 
 	            // Leer la salida del comando
@@ -25,7 +25,7 @@ public class BuscaMacAddress {
 	            String linea;
 	            Boolean esAdaptadorWifi=false;
 	            
-	         // Patr�n regex para encontrar la MAC Address
+	         // Patron regex para encontrar la MAC Address
 	            Pattern macPattern = Pattern.compile("([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})");
 	            
 	            while ((linea = reader.readLine()) != null) {
@@ -38,13 +38,15 @@ public class BuscaMacAddress {
 	                  
 	                if(esAdaptadorWifi) {
 	                	 Matcher matcher = macPattern.matcher(linea);
-	                     if (matcher.find()) {
-	                    	 
-	                         String macAddress = matcher.group();
-	                         // Suprimir los guiones
-	                         macAddress = macAddress.replace("-", "").replace(":", "");
-	                         respuestaMacAddress = String.valueOf(macAddress);
-	                     }
+	                	 // agregamos un filtro mas para asegurar que busque la direccion fisica
+	                	 if(linea.contains("Direcci") && linea.contains("sica")) {
+		                     if (matcher.find()) {		                    	 
+		                         String macAddress = matcher.group();
+		                         // Suprimir los guiones
+		                         macAddress = macAddress.replace("-", "").replace(":", "");
+		                         respuestaMacAddress = String.valueOf(macAddress);
+		                     }
+	                	}
 	                }
 	                
 	            }
